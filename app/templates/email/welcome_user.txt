@@ -1,0 +1,16 @@
+Hello {{user.username}},
+
+
+Welcome to FoodAirline!
+
+
+We have just noticed you signed up to our app and we are delighted to have you 😀
+
+Enjoy the blogs of your top categories, and come back for more...cheers!
+
+
+Best wishes,
+
+fA,
+
+foodAirline.

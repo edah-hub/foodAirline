@@ -1,0 +1,65 @@
+{%extends 'base.html' %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
+{% endblock %}
+
+{%block content%} 
+
+
+
+<div class="container-fluid">
+    <div class="container meal">
+        <div class="productImage mealImg"><img src="{{url_for('static',filename='photos/bg.jpg')}}" width="100%"></div>
+        <div class="size mealName" style="background-color:white;">
+          <h4>PACKAGE</h4>
+          <ul>
+            <li>{{meal.meal_name}}</li>
+          </ul>
+        </div>
+        <div class="price mealPrice" style="background-color:white;">
+          <h4>PRICE</h4>
+          <span>Ksh {{meal.meal_cost}}</span>
+        </div>
+        <div class="color recommendation">
+          
+        </div>
+        <div class="productName packageName">
+        
+        </div>
+        
+        
+    </div>
+    <div class="container" style="padding-right:20%;">
+        <table class="table table-sm table-light">
+            <thead class="thead-dark">
+                <th>Meal</th>
+                <th>Description</th>
+                <th>Cost</th>
+                <th>For...</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{meal.meal_name}}</td>
+                    <td>{{meal.meal_description}}</td>   
+                    <td>{{meal.meal_cost}}</td> 
+                    <td>{{meal.meal_count}} people</td>  
+                </tr>
+                <tr>
+                    <td><a href="{{url_for('main.checkout',id=meal.id)}}"><button class="btn btn-success btn-lg">checkout</button></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    
+    <div class="container">
+        
+        
+    </div>
+</div>
+
+
+
+{% endblock %}

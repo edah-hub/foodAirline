@@ -1,0 +1,21 @@
+Hello {{user.name}},
+
+You order was placed successfully! 
+Our delivery team will reach out to you as soon as your order is packed and ready for dispatch. 
+Hold on tight, your taste buds deserve this treat 😀
+
+In case these checkout details are not correct, please let us know:
+
+Recipient's name: {{user.name}}
+Recipient's phone number: {{user.phone}}
+Recipient's address: {{user.address}}
+
+
+Cheers!
+
+
+Checkout team,
+
+fA,
+
+foodAirline.

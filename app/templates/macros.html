@@ -1,0 +1,93 @@
+{% macro displayMeals(meals) %}{% for meal in meals %}
+
+<div class="mt-3 col-xs-12 col-sm-6  col-md-6  col-lg-4 ">
+    <div class="food_container">
+        <div class="card d-flex position-relative flex-column" style="width: 18rem;">
+            <div class='imgContainer'>
+                {% if meal.meal_image_path %}
+                <img class="card-img-top" src="{{url_for('static',filename=meal.meal_image_path )}}" alt=""> {%endif%}
+            </div>
+            <div class="card-body content">
+                <h5 class="card-title"><a href="{{url_for('main.orders',id=meal.id)}}"><strong style="font-size:smaller;">Package:</strong> {{ meal.meal_name }}</a></h5>
+                <p class="card-text" style="font-size:x-small;"> {{ meal.meal_description }}</p>
+                <p class="card-text"> <strong>Ksh.</strong> {{ meal.meal_cost }}</p>
+                <p><em style="font-size:x-small;">Share cost?</em></p>
+                <p class="card-text"> {{ meal.meal_count }} people</p>
+                
+            </div>
+            <a href="{{url_for('main.orders',id=meal.id)}}" class="btn btn-primary">Order Now</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif
+    }
+    
+    .food_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .food_container .card {
+        max-width: 300px;
+        height: 215px;
+        margin: 30px 10px;
+        padding: 20px 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        transition: 0.3s ease-in-out;
+    }
+    
+    .food_container .card:hover {
+        height: 450px;
+    }
+    
+    .food_container .card .imgContainer {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        top: -50px;
+        left: 10px;
+        z-index: 1;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .food_container .card .imgContainer img {
+        max-width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+    
+    .food_container .card .content {
+        position: relative;
+        margin-top: -140px;
+        padding: 10px 15px;
+        text-align: center;
+        color: #111;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s ease-in-out;
+    }
+    
+    .food_container .card:hover .content {
+        visibility: visible;
+        opacity: 1;
+        margin-top: -40px;
+        transition-delay: 0.3s;
+    }
+    
+    @media (max-width: 330px) {
+        .food_container .card .imgContainer {
+            left: -2px;
+        }
+    }
+</style>
+
+
+{% endfor %} {% endmacro %}

@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
+{% endblock %}
+
+
+{%block content%}
+
+
+<header style="background-image:url({{ url_for('static', filename='photos/kebab.jpg') }});background-size:cover;background-position:center;background-repeat:no-repeat;padding-top:30%;padding-bottom:30%;" width="100%" height="100%">
+
+</header>
+
+
+
+<section class="body">
+    <!-- <h1>Home page works!</h1> -->
+    <div class="container">
+        
+        <p></p>
+        
+        {% for meal in meal %} 
+        <a href="{{url_for('main.orders',id=meal.id)}}">
+            <div class="container-fluid">
+                <div class="container meal">
+            
+                    <div class="productImage mealImg"><img src="{{url_for('static',filename='photos/bg.jpg')}}" width="100%"></div>
+                    <div class="size mealName" style="background-color:white;">
+                      <h4>{{meal.meal_name}}</h4>
+                      <ul>
+                        <li style="font-size:x-small">{{meal.meal_description}}</li>
+                        <span>for {{meal.meal_count}}</span>
+                      </ul>
+                    </div>
+                    <div class="price mealPrice" style="background-color:white;">
+                      <h4>PRICE</h4>
+                      <span>Ksh {{meal.meal_cost}}</span>
+                    </div>
+                    <div class="color recommendation">
+                      
+                    </div>
+                    <div class="productName packageName">
+                        
+                    </div>
+                </div>
+            </div>
+        </a>
+        
+        
+        
+        {% endfor %}
+
+    </div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+    <footer class="footer block-dark mt-n15 mt-lg-n30" style="background-color:black;color:white;padding-top:5%;padding-bottom:5%;">
+        <!-- <div class="h-150px h-lg-225px bgi-no-repeat bgi-position-x-center bgi-position-y-top bgi-size-cover dark-top-curved-bg"></div> -->
+        <h2 style="text-align:center;">Reach Out Today</h2>
+        <div class="container-fluid" style="margin-left:2%;">
+            <div class="row" style="padding-bottom:2%;color:black;padding-top:5%;">
+
+
+                <div class="col col-md-3 col-contact-form" id="mc_embed_signup">
+                    <h3 class="body-font">Write to Us</h3>
+                    {{ wtf.quick_form(contact_form) }}
+                  </div>
+
+
+                  <div class="col col-md-3 col-address">
+                    <h3 class="body-font">Find us</h3>
+                      <br>
+                    <p>foodAirline-TheHub</p>
+                    <p>Mbagathi Way,</p>
+                    <p>6543-00200, Nairobi.</p>
+                    <div style="padding-top:63.265%;position:relative;"><iframe src="https://gifer.com/embed/RKO" width="70%" height="75%" style='position:absolute;top:0;left:0;' frameBorder="0" allowFullScreen></iframe></div>
+                  </div>
+
+
+                  <div class="col col-md-3 col-contact-info">
+                    <h3 class="body-font">Add us to your list</h3>
+                      <br>
+                    <p>foodAirline</p>
+                    <p>davinci.monalissa3@gmail.com</p>
+                    <p>+2547 98 765 432</p>
+                    <div style="padding-top:84.375%;position:relative;"><iframe src="https://gifer.com/embed/265" width="75%" height="60%" style='position:absolute;top:0;left:0;' frameBorder="0" allowFullScreen></iframe></div>
+                  </div>
+
+
+                  <div class="col col-md-3 col-map" id="google-maps" style="margin-top:2%;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7776084621364!2d36.80240001464705!3d-1.3086869360198807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1059d73023bb%3A0x7f1c4372c902ce24!2sMbagathi%20Way%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1647876624342!5m2!1sen!2ske" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                  </div>
+
+
+
+        
+                
+        
+            </div>
+        </div>
+        
+    </footer>
+</div>
+
+{%endblock%}

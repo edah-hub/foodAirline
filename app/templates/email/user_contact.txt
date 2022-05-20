@@ -1,0 +1,16 @@
+Hello {{contact.contact_name}},
+
+
+You have reached FoodAirline.
+
+
+Our support team will get back to you as soon as possible 😀
+
+Enjoy our order varieties, and come back for more...cheers!
+
+
+Best wishes,
+
+fA,
+
+foodAirline.

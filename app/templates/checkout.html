@@ -1,0 +1,107 @@
+{% extends 'base.html' %} 
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{%block content%} 
+<body style="background-color:#FFEF82;" class="body-checkout">
+    <!-- <div class="container" >
+        <p>{{meal.meal_name}}</p>
+    <p><a href="{{url_for('main.index')}}">Complete order</a></p>
+    </div> -->
+
+
+    <!-- <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <link rel="stylesheet" href="index.css" type="text/css" media="all  ">
+        <title>Document</title>
+    </head> -->
+    <body>
+     <!-- <h2 class="text-center">Check out   <img src="goodfood.jpeg" alt="logo">  </h2> -->
+        
+        <div class="container">
+    
+        </div>
+        
+        
+        <section class="container"  id="form" style="margin-top:2.5%;">
+            <!-- <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Who will receive this order? Enter a name..." name="name" required>
+                      </div>
+                  <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter recipient's email..." name="email" required>
+                  </div>
+                  
+                </div>
+                <div class="form-group">
+                  <label for="address">Address</label>
+                  <input type="text" class="form-control" id="address" placeholder="Enter recipient's home address..." name="address ">
+                </div> -->
+                
+
+                <div class="row">
+                    <div class="col-md-6"> {{ wtf.quick_form(form) }} </div>
+
+                    <div class="col-md-6" style="margin-top:10%;">
+                        <label for="fname">Accepted Payment Methods</label>
+                        <div class="icon-container">
+                            <i class="fa fa-cc-visa" style="color:navy;"></i>
+                            <i class="fa fa-cc-amex" style="color:blue;"></i>
+                            <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                            <i class="fa fa-cc-discover" style="color:orange;"></i>
+                            <img src="{{url_for('static',filename='photos/mpesa.png')}}" width="" id="mpesa-icon"  style="color:green;"
+                                alt="" height="15">
+                        </div></div>
+                </div>
+                <div class="container">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3">
+                        <div style="padding-top:84.375%;position:relative;"><iframe src="https://gifer.com/embed/265" width="75%" height="60%" style='position:absolute;top:0;left:0;' frameBorder="0" allowFullScreen></iframe></div>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+                
+                
+                <!-- <div class="form-group">
+                    <label for="inputZip">Check-in</label>
+                    <input type="date" name="in"  >
+                    <label for="inputZip">Check-out</label>
+    
+                    <input type="date" name="out" >
+    
+                </div> -->
+            
+    
+        </section>
+    
+        <!-- <section class="confirmation" style="height: 20vh;">
+            <h4>Check out</h4>
+            <p id="name"></p>
+            <p id="emailo"></p>
+            <p id="duration"></p>
+            <p id="guestNo"></p>
+              <p style="background-color: green; width: 80px; color: white; text-align: center; padding: 5px;" id="">Confirm</p>
+    
+            
+          </section> -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/bbb7424702.js" crossorigin="anonymous"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    
+
+
+
+
+    
+</body>
+
+
+{%endblock%}
